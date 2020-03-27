@@ -1,17 +1,33 @@
-<%= form_with scope: :user, url: users_path(@user), :class => "sign-up-form", local: true do |form| %>
+<%= form_with scope: :user, url: users_path, :class => "sign-up-form", local: true do |form| %>
+
   <div class="sign-up-form__entry">
     <%= form.label :username, :class => "sign-up-form__title" %>
     <%= form.text_field :username, :class => "sign-up-form__input" %>
+    <% if @user.errors.any? %>
+      <% if @user.errors.messages[:username].any? %>
+        <p class="sign-up-form__caption error">Your username <%= @user.errors.messages[:username][0] %></p>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="sign-up-form__entry">
     <%= form.label :email, :class => "sign-up-form__title" %>
     <%= form.text_field :email, :class => "sign-up-form__input" %>
+    <% if @user.errors.any? %>
+      <% if @user.errors.messages[:email].any? %>
+        <p class="sign-up-form__caption error">Your email <%= @user.errors.messages[:email][0] %></p>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="sign-up-form__entry">
     <%= form.label :password, :class => "sign-up-form__title" %>
-    <%= form.text_field :password, :class => "sign-up-form__input" %>
+    <%= form.password_field :password, :class => "sign-up-form__input" %>
+    <% if @user.errors.any? %>
+      <% if @user.errors.messages[:password].any? %>
+        <p class="sign-up-form__caption error">Your password <%= @user.errors.messages[:password][0] %></p>
+      <% end %>
+    <% end %>
     <p class="sign-up-form__caption">Make sure it's at least 8 characters including a number and a lowercase letter.</p>
   </div>
 
