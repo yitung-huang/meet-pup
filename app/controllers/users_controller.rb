@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to @user
     else
-      render 'landing/index'
+      render 'pages/index'
     end
 
   end

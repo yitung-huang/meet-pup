@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  get 'landing/index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'pages#index'
+
+  get 'dashboard', to: 'pages#dashboard'
+  get 'profile', action: :show, controller: 'users'
 
   resources :users do
     resources :dogs
   end
-
-  root 'landing#index'
 
 end
