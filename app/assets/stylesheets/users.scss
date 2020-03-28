@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+/* Sign up */
 .sign-up-form {
   padding: 1em 2em;
   background: #ffddbb;
@@ -47,4 +48,36 @@
 .sign-up-form__button:active {
   color: #aa3300;
   background: white;
+}
+
+
+
+/* Account info */
+.account-info-container {
+  padding: 1em 2em;
+  background: #ffddbb;
+  border-radius: 4px;
+  width: 75%;
+  max-width: 800px;
+  margin: 2em auto;
+}
+
+.account-info-content {
+  margin-top: 1em;
+  padding: 1em 0;
+}
+
+.account-info-content__entry {
+  display: flex;
+}
+
+.account-info-content__dogs {
+  background: white;
+  border-radius: 4px;
+  padding: 1em 2em;
+}
+
+.entry__header {
+  font-weight: 700;
+  width: 20%;
 }

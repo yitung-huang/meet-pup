@@ -1,17 +1,22 @@
-<div class="account-info">
-  <h2>Account information</h2>
+<div class="account-info-container">
+  <h2 class="account-info-title">My account</h2>
   <div class="account-info-content">
     <div class="account-info-content__entry">
-      <p class="entry__header">Username</p>
-      <p class="entry__data"><%= @user.username %></p>
+      <div class="entry__header">Username</div>
+      <div class="entry__data"><%= @user.username %></div>
     </div>
     <div class="account-info-content__entry">
-      <p class="entry__header">Email</p>
-      <p class="entry__data"><%= @user.email %></p>
+      <div class="entry__header">Registered email</div>
+      <div class="entry__data"><%= @user.email %></div>
+      <%= link_to 'Edit' %>
     </div>
     <div class="account-info-content__entry">
-      <p class="entry__header">Password</p>
-      <p class="entry__data"><%= @user.password %></p>
+      <div class="entry__header">My dogs</div>
+      <div class="entry__data">
+        <% @user.dogs.each do | dog | %>
+          <div class="entry_data"><%= dog.name %></div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
