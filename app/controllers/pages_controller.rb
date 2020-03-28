@@ -12,5 +12,6 @@ class PagesController < ApplicationController
 
   # render dashboard if user have dog profiles set up
   def dashboard
+    @dogs = Dog.all
   end
 end

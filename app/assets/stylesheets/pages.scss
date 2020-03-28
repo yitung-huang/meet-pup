@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+@import "styles";
+
 body {
   background-image: url("https://images.unsplash.com/photo-1516219977482-2fd38ba6b6e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
   background-size: cover;
@@ -10,12 +12,12 @@ body {
   background-repeat: no-repeat;
 }
 
+/* Landing */
 .landing-container {
   width: 75%;
   max-width: 800px;
   margin: 6em auto;
   background: rgba(256, 256, 256, 0.6);
-  border-radius: 4px;
 }
 
 @media (min-width: 900px){
@@ -33,4 +35,41 @@ body {
 .landing-intro__heading {
   margin-top: 1em;
   margin-bottom: 0.5em;
+}
+
+
+/* Dashboard */
+.dashboard {
+  background: $--colour--background;
+  padding: $--padding--container;
+}
+
+.dashboard-section__content {
+
+}
+
+@media (min-width: 900px) {
+  .dashboard-section__content {
+    display: flex;
+  }
+}
+
+.dog-profile {
+  width: 30%;
+  padding: 1em;
+  background: white;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 900px){
+  .dog-profile {
+    margin-right: 1em;
+  }
+}
+
+.dog-profile__photo {
+  width: 100%;
+}
+
+.dog-profile__info {
 }
