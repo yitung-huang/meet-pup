@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_27_130852) do
+ActiveRecord::Schema.define(version: 2020_03_28_034103) do
 
   create_table "dogs", force: :cascade do |t|
     t.string "name"
@@ -25,13 +25,8 @@ ActiveRecord::Schema.define(version: 2020_03_27_130852) do
     t.index ["user_id"], name: "index_dogs_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password"
-    t.string "email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+# Could not dump table "users" because of following StandardError
+#   Unknown type 'dogs' for column 'dogs'
 
   add_foreign_key "dogs", "users"
 end
