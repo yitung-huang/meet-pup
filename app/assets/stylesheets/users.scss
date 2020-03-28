@@ -42,14 +42,16 @@
 .sign-up-form__button {
   display: block;
   margin: 1em auto;
+  padding: 1em 1.5em !important;
   color: white;
-  background: #aa3300;
+  background: $--colour--accent;
 }
 
 .sign-up-form__button:hover,
 .sign-up-form__button:active {
   color: #aa3300;
   background: white;
+  padding: 1em 1.5em;
 }
 
 
@@ -66,6 +68,20 @@
 
 .account-info-content__entry {
   display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+  align-items: flex-start;
+}
+
+.account-info-content__entry > .entry__header {
+  min-width: 160px;
+}
+
+@media (min-width: 900px) {
+  .account-info-content__entry {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .account-info-content__dogs {

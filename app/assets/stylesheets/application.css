@@ -29,11 +29,22 @@ p {
   margin: 0;
 }
 
+a.button {
+  text-decoration: none;
+}
+
 .button {
   font-size: inherit;
-  padding: 1em 1.5em;
+  padding: 0.5em 1em;
   border: none;
   border-radius: 2px;
+}
+
+.button-add,
+.button-edit {
+  background: #dd7715;
+  color: white;
+  margin-top: 0.5em;
 }
 
 .error {
@@ -49,4 +60,9 @@ p {
 
 .page-title {
   margin-bottom: 1em;
+}
+
+.display-panel {
+  display: flex;
+  flex-wrap: wrap;
 }
