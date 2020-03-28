@@ -1,0 +1,37 @@
+<%= form_with( model: [ @user, @user.dogs.build ], :class => "dog-info-form", local: true ) do |form| %>
+
+  <div class="dog-info-form__entry">
+    <%= form.label :name, :class => "dog-info-form__title" %>
+    <%= form.text_field :name, :class => "dog-info-form__input" %>
+    <% if @dog.errors.any? %>
+      <% if @dog.errors.messages[:name].any? %>
+        <p class="dog-info-form__caption error">The dog's name <%= @dog.errors.messages[:name][0] %></p>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="dog-info-form__entry">
+    <%= form.label :age, :class => "dog-info-form__title" %>
+    <%= form.text_field :age, :class => "dog-info-form__input" %>
+    <% if @dog.errors.any? %>
+      <% if @dog.errors.messages[:age].any? %>
+        <p class="dog-info-form__caption error">The dog's age <%= @dog.errors.messages[:age][0] %></p>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="dog-info-form__entry">
+    <%= form.label :gender, :class => "dog-info-form__title" %>
+    <%= form.select :gender, ["Male", "Female"] %>
+  </div>
+
+  <div class="dog-info-form__entry">
+    <%= form.label :size, :class => "dog-info-form__title" %>
+    <%= form.select :size, ["Toy", "Small", "Medium", "Large", "Giant"] %>
+  </div>
+
+  <div class="dog-info-form__entry">
+    <%= form.submit "Save dog details", :class => "button dog-info-form__button" %>
+  </div>
+
+<% end %>

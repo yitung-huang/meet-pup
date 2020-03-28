@@ -10,13 +10,14 @@
       <div class="entry__data"><%= @user.email %></div>
       <%= link_to 'Edit' %>
     </div>
-    <div class="account-info-content__entry">
+    <div class="display-panel">
       <div class="entry__header">My dogs</div>
       <div class="entry__data">
         <% @user.dogs.each do | dog | %>
           <%= render 'dogs/tile', dog: dog %>
         <% end %>
       </div>
+      <%= link_to 'Add dog', new_user_dog_path(@user) %>
     </div>
   </div>
 </div>
