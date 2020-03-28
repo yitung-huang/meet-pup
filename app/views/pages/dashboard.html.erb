@@ -3,15 +3,7 @@
     <h2 class="dashboard-section__title page-title">Dogs near me</h2>
     <div class="dashboard-section__content">
       <% @dogs.each do | dog | %>
-        <div class="dog-profile">
-          <%= image_tag "dog_profile_default.png", class: "dog-profile__photo" %>
-          <div class="dog-profile__info">
-            <h3 class="dog-profile__name"><%= dog.name %></h3>
-            <p class="dog-profile__age"><%= dog.age %></p>
-            <p class="dog-profile__gender"><%= dog.gender %></p>
-            <p class="dog-profile__size"><%= dog.size %></p>
-          </div>
-        </div>
+        <%= render 'dogs/tile', dog: dog %>
       <% end %>
     </div>
   </div>

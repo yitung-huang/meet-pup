@@ -14,7 +14,7 @@
       <div class="entry__header">My dogs</div>
       <div class="entry__data">
         <% @user.dogs.each do | dog | %>
-          <div class="entry_data"><%= dog.name %></div>
+          <%= render 'dogs/tile', dog: dog %>
         <% end %>
       </div>
     </div>
