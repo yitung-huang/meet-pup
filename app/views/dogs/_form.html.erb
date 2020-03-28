@@ -11,13 +11,7 @@
   </div>
 
   <div class="dog-info-form__entry">
-    <%= form.label :age, :class => "dog-info-form__title" %>
-    <%= form.text_field :age, :class => "dog-info-form__input" %>
-    <% if @dog.errors.any? %>
-      <% if @dog.errors.messages[:age].any? %>
-        <p class="dog-info-form__caption error">The dog's age <%= @dog.errors.messages[:age][0] %></p>
-      <% end %>
-    <% end %>
+    <%= form.date_select :birth_date, {start_year: (Date.today.year - 30), end_year: Date.today.year} %>
   </div>
 
   <div class="dog-info-form__entry">

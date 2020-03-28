@@ -1,4 +1,5 @@
 class DogsController < ApplicationController
+  helper ApplicationHelper
 
   def show
     @dog = Dog.find(params[:id])
@@ -22,7 +23,7 @@ class DogsController < ApplicationController
 
   private
     def dog_params
-      params.require(:dog).permit(:name, :age, :gender, :size)
+      params.require(:dog).permit(:name, :birth_date, :gender, :size)
     end
 
 end

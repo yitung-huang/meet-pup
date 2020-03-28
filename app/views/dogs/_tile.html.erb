@@ -2,8 +2,14 @@
   <%= image_tag "dog_profile_default.png", class: "dog-profile__photo" %>
   <div class="dog-profile__info">
     <h3 class="dog-profile__name"><%= dog.name %></h3>
-    <p class="dog-profile__age"><%= dog.age %></p>
-    <p class="dog-profile__gender"><%= dog.gender %></p>
-    <p class="dog-profile__size"><%= dog.size %></p>
+    <% if dog.birth_date? %>
+      <p class="dog-profile__age"><%= calc_age(dog) %></p>
+    <% end %>
+    <% if dog.gender? %>
+      <p class="dog-profile__gender"><%= dog.gender %></p>
+    <% end %>
+    <% if dog.size? %>
+      <p class="dog-profile__size"><%= dog.size %></p>
+    <% end %>
   </div>
 </div>
