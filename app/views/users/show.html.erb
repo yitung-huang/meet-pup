@@ -1,5 +1,6 @@
 <div class="account-info-container container">
   <h2 class="account-info-title page-title">My account</h2>
+  <%= link_to 'Edit account details', edit_user_path(@user), class: "button button-edit" %>
   <div class="account-info-content">
     <div class="account-info-content__entry">
       <div class="entry__header">Username</div>
@@ -8,7 +9,6 @@
     <div class="account-info-content__entry">
       <div class="entry__header">Registered email</div>
       <div class="entry__data"><%= @user.email %></div>
-      <%= link_to 'Change', nil, class: "button button-edit" %>
     </div>
     <div>
       <div class="account-info-content__entry">
@@ -22,4 +22,5 @@
       </div>
     </div>
   </div>
+  <%= link_to 'Go to dashboard', dashboard_path, class: "button button-edit" %>
 </div>

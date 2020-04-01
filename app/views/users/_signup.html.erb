@@ -1,11 +1,11 @@
-<%= form_with scope: :user, url: users_path, :class => "sign-up-form", local: true do |form| %>
+<%= form_with model: @user, :class => "sign-up-form", local: true do |form| %>
 
   <div class="sign-up-form__entry">
     <%= form.label :username, :class => "sign-up-form__title" %>
     <%= form.text_field :username, :class => "sign-up-form__input" %>
     <% if @user.errors.any? %>
       <% if @user.errors.messages[:username].any? %>
-        <p class="sign-up-form__caption error">Your username <%= @user.errors.messages[:username][0] %></p>
+        <p class="sign-up-form__caption error">This username <%= @user.errors.messages[:username][0] %></p>
       <% end %>
     <% end %>
   </div>
@@ -15,7 +15,7 @@
     <%= form.text_field :email, :class => "sign-up-form__input" %>
     <% if @user.errors.any? %>
       <% if @user.errors.messages[:email].any? %>
-        <p class="sign-up-form__caption error">Your email <%= @user.errors.messages[:email][0] %></p>
+        <p class="sign-up-form__caption error">This email <%= @user.errors.messages[:email][0] %></p>
       <% end %>
     <% end %>
   </div>
@@ -25,15 +25,24 @@
     <%= form.password_field :password, :class => "sign-up-form__input" %>
     <% if @user.errors.any? %>
       <% if @user.errors.messages[:password].any? %>
-        <p class="sign-up-form__caption error">Your password <%= @user.errors.messages[:password][0] %></p>
+        <p class="sign-up-form__caption error">This password <%= @user.errors.messages[:password][0] %></p>
       <% end %>
     <% end %>
     <p class="sign-up-form__caption">Make sure it's at least 8 characters including a number and a lowercase letter.</p>
   </div>
 
-  <div class="sign-up-form__entry">
-    <%= form.submit "Sign up for Meet Pup", :class => "button sign-up-form__button" %>
-    <p class="sign-up-form__caption">By clicking "Sign up for Meet Pup", you agree to our <a class="link-inline" href="#">Terms of Service</a> and <a class="link-inline" href="#">Privacy Statement</a>.</p>
-  </div>
+  <% if params[:controller].eql?("pages") && params[:action].eql?("index") %>
+    <div class="sign-up-form__entry">
+      <%= form.submit "Sign up for Meet Pup", :class => "button sign-up-form__button" %>
+      <p class="sign-up-form__caption">By clicking "Sign up for Meet Pup", you agree to our <a class="link-inline" href="#">Terms of Service</a> and <a class="link-inline" href="#">Privacy Statement</a>.</p>
+    </div>
+  <% end %>
+
+  <% if params[:controller].eql?("users") && (params[:action].eql?("edit") || params[:action].eql?("update")) %>
+    <div class="sign-up-form__entry">
+      <%= form.submit "Save account details", :class => "button button-edit" %>
+      <%= link_to 'Cancel', user_path(@user), class: "button button-add" %>
+    </div>
+  <% end %>
 
 <% end %>
