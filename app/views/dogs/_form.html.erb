@@ -26,6 +26,7 @@
 
   <div class="dog-info-form__entry">
     <%= form.submit "Save dog details", :class => "button dog-info-form__button" %>
+    <%= link_to "Cancel", user_path(@user), :class => "button button-cancel" %>
   </div>
 
 <% end %>

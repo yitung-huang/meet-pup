@@ -11,7 +11,8 @@ class DogsController < ApplicationController
   end
 
   def edit
-    @dog = Dog.find(params[:id])
+    @user = User.find(params[:user_id])
+    @dog = @user.dogs.find(params[:id])
   end
 
   def create
@@ -19,6 +20,17 @@ class DogsController < ApplicationController
     @dog = @user.dogs.create(dog_params)
 
     redirect_to user_path(@user)
+  end
+
+  def update
+    @user = User.find(params[:user_id])
+    @dog = @user.dogs.find(params[:id])
+
+    if @dog.update(dog_params)
+      redirect_to @dog
+    else
+      render 'edit'
+    end
   end
 
   private

@@ -12,4 +12,7 @@
       <p class="dog-profile__size"><%= dog.size %></p>
     <% end %>
   </div>
+  <% if params[:controller].eql?("users") %>
+    <%= link_to 'Edit dog profile', edit_user_dog_path(@user, dog), class: "button button-edit" %>
+  <% end %>
 </div>
