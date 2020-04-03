@@ -33,6 +33,13 @@ class DogsController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(params[:user_id])
+    @dog = @user.dogs.find(params[:id])
+    @dog.destroy
+    redirect_to user_path(@user)
+  end
+
   private
     def dog_params
       params.require(:dog).permit(:name, :birth_date, :gender, :size)

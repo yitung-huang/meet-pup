@@ -18,7 +18,6 @@ Meet Pup is a web application that provides a social network for dog owners. Aft
 
 *  Restrict actions based on logged in users
 *  Add image upload for dog profiles
-*  Add button to remove dog profiles
 *  Messaging
 *  Add location for user profiles
 
