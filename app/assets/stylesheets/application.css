@@ -17,6 +17,7 @@
 :root {
   --colour--background: #ffddbb; /* light orange*/
   --colour--primary: #dd7715; /* dark orange */
+  --colour--secondary: #4f1e0f; /* dark brown */
   --colour--accent: #aa3300; /* dark red */
 
   --colour--links: #0051ba; /* blue */
@@ -26,6 +27,7 @@
 }
 
 body {
+  margin: 0;
   font-family: var(--ff--primary);
   color: var(--colour--accent);
 }
@@ -142,4 +144,28 @@ select {
 
 .form-submit__buttons > * {
   margin-right: 0.5em;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  background: var(--colour--secondary);
+  padding: 0.5em;
+}
+
+.nav-bar a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-bar a:hover {
+  color: var(--colour--primary);
+}
+
+.nav-bar__logo {
+  margin: 0 0.5em;
+}
+
+.nav-bar__item {
+  margin-right: 1em;
 }
