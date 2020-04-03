@@ -15,12 +15,17 @@
  */
 
 :root {
+  --colour--background: #ffddbb; /* light orange*/
+  --colour--primary: #dd7715; /* dark orange */
+  --colour--accent: #aa3300; /* dark red */
 
+  --colour--links: #0051ba; /* blue */
+  --colour--links__hover: #f57818; /* orange */
 }
 
 body {
   font-family: 'Ubuntu', sans-serif;
-  color: #aa3300;
+  color: var(--colour--accent);
 }
 
 h1,
@@ -28,6 +33,19 @@ h2,
 h3,
 p {
   margin: 0;
+}
+
+.link-inline {
+  color: var(--colour--links);
+  text-decoration: none;
+  padding-bottom: 0.1em;
+  border-bottom: 1px solid var(--colour--links);
+}
+
+.link-inline:hover,
+.link-inline:active {
+  color: var(--colour--links__hover);
+  border-bottom: 1px solid var(--colour--links__hover);
 }
 
 a.button {
@@ -42,8 +60,24 @@ a.button {
 }
 
 .button-add,
-.button-edit {
-  background: #dd7715;
+.button-edit,
+.button-save {
+  background: var(--colour--primary);
+  color: white;
+  margin-top: 0.5em;
+}
+
+.button-add:hover,
+.button-add:active,
+.button-edit:hover,
+.button-edit:active,
+.button-submit:hover,
+.button-submit:active {
+  background: var(--colour--accent);
+}
+
+.button-cancel {
+  background: #aa8850;
   color: white;
   margin-top: 0.5em;
 }
@@ -79,6 +113,11 @@ a.button {
 }
 
 .vertical-align {
+  display: flex;
+  align-items: center;
+}
+
+.center {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -52,24 +52,17 @@
   margin: 1em auto;
   padding: 1em 1.5em !important;
   color: white;
-  background: $--colour--accent;
+  background: $--colour--primary;
 }
 
 .sign-up-form__button:hover,
 .sign-up-form__button:active {
-  color: #aa3300;
-  background: white;
-  padding: 1em 1.5em;
+  background: $--colour--accent;
 }
 
 
 
 /* Account info */
-.account-info-container {
-  background: $--colour--background;
-  padding: $--padding--container;
-}
-
 .account-info-content {
   padding: 1em 0;
 }

@@ -12,6 +12,11 @@ body {
   background-repeat: no-repeat;
 }
 
+.page-content-container {
+  background: $--colour--background;
+  padding: $--padding--container;
+}
+
 /* Landing */
 .landing-container {
   width: 75%;
@@ -45,10 +50,6 @@ body {
 .dashboard {
   background: $--colour--background;
   padding: $--padding--container;
-}
-
-.dashboard-section__content {
-
 }
 
 @media (min-width: 900px) {

@@ -41,7 +41,7 @@
   <% if params[:controller].eql?("users") && (params[:action].eql?("edit") || params[:action].eql?("update")) %>
     <div class="sign-up-form__entry">
       <%= form.submit "Save account details", :class => "button button-edit" %>
-      <%= link_to 'Cancel', user_path(@user), class: "button button-add" %>
+      <%= link_to 'Cancel', user_path(@user), class: "button button-cancel" %>
     </div>
   <% end %>
 
