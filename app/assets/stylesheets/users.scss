@@ -21,7 +21,7 @@
 }
 
 .sign-up-form__entry {
-  margin-bottom: 0.5em;
+  margin-bottom: $--margin-bottom--forms;
 }
 
 .sign-up-form__title,
@@ -36,9 +36,6 @@
 
 .sign-up-form__input {
   width: 100%;
-  border: 1px solid grey;
-  border-radius: 4px;
-  padding: 0.5em;
 }
 
 .sign-up-form__caption {

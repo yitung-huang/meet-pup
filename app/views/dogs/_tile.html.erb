@@ -1,18 +1,28 @@
 <div class="dog-profile">
   <%= image_tag "dog_profile_default.png", class: "dog-profile__photo" %>
   <div class="dog-profile__info">
-    <h3 class="dog-profile__name"><%= dog.name %></h3>
-    <% if dog.birth_date? %>
-      <p class="dog-profile__age"><%= calc_age(dog) %></p>
-    <% end %>
-    <% if dog.gender? %>
-      <p class="dog-profile__gender"><%= dog.gender %></p>
-    <% end %>
-    <% if dog.size? %>
-      <p class="dog-profile__size"><%= dog.size %></p>
-    <% end %>
+
+    <div class="dog-profile__info__row">
+      <h3 class="dog-profile__name"><%= dog.name %></h3>
+      <% if dog.birth_date? %>
+        <p class="dog-profile__age"><%= calc_age(dog) %></p>
+      <% end %>
+    </div>
+
+    <div class="dog-profile__info__row">
+      <% if dog.gender? %>
+        <p class="dog-profile__gender"><%= dog.gender %></p>
+      <% end %>
+      <% if dog.size? %>
+        <p class="dog-profile__size"><%= dog.size %></p>
+      <% end %>
+    </div>
+
+    <div class="center">
+      <% if params[:controller].eql?("users") %>
+        <%= link_to 'Edit dog profile', edit_user_dog_path(@user, dog), class: "button button-edit" %>
+      <% end %>
+    </div>
+
   </div>
-  <% if params[:controller].eql?("users") %>
-    <%= link_to 'Edit dog profile', edit_user_dog_path(@user, dog), class: "button button-edit" %>
-  <% end %>
 </div>

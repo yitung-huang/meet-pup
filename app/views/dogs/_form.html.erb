@@ -1,8 +1,8 @@
 <%= form_with( model: [ @user, @user.dogs.build ], :class => "dog-info-form", local: true ) do |form| %>
 
   <div class="dog-info-form__entry">
-    <%= form.label :name, :class => "dog-info-form__title" %>
-    <%= form.text_field :name, :class => "dog-info-form__input" %>
+    <div class="entry__header"><%= form.label :name, :class => "dog-info-form__title" %></div>
+    <div class="entry__data"><%= form.text_field :name, :class => "dog-info-form__input" %></div>
     <% if @dog.errors.any? %>
       <% if @dog.errors.messages[:name].any? %>
         <p class="dog-info-form__caption error">The dog's name <%= @dog.errors.messages[:name][0] %></p>
@@ -11,21 +11,22 @@
   </div>
 
   <div class="dog-info-form__entry">
-    <%= form.date_select :birth_date, {start_year: (Date.today.year - 30), end_year: Date.today.year} %>
+    <div class="entry__header"><%= form.label :birth_date, :class => "dog-info-form__title" %></div>
+    <div class="entry__data"><%= form.date_select :birth_date, {start_year: (Date.today.year - 30), end_year: Date.today.year} %></div>
   </div>
 
   <div class="dog-info-form__entry">
-    <%= form.label :gender, :class => "dog-info-form__title" %>
-    <%= form.select :gender, ["Male", "Female"] %>
+    <div class="entry__header"><%= form.label :gender, :class => "dog-info-form__title" %></div>
+    <div class="entry__data"><%= form.select :gender, ["Male", "Female"] %></div>
   </div>
 
   <div class="dog-info-form__entry">
-    <%= form.label :size, :class => "dog-info-form__title" %>
-    <%= form.select :size, ["Toy", "Small", "Medium", "Large", "Giant"] %>
+    <div class="entry__header"><%= form.label :size, :class => "dog-info-form__title" %></div>
+    <div class="entry__data"><%= form.select :size, ["Toy", "Small", "Medium", "Large", "Giant"] %></div>
   </div>
 
-  <div class="dog-info-form__entry">
-    <%= form.submit "Save dog details", :class => "button dog-info-form__button" %>
+  <div class="form-submit__buttons">
+    <%= form.submit "Save dog details", :class => "button button-save" %>
     <%= link_to "Cancel", user_path(@user), :class => "button button-cancel" %>
   </div>
 

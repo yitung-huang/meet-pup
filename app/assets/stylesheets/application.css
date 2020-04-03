@@ -21,10 +21,12 @@
 
   --colour--links: #0051ba; /* blue */
   --colour--links__hover: #f57818; /* orange */
+
+  --ff--primary: 'Ubuntu', sans-serif;
 }
 
 body {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: var(--ff--primary);
   color: var(--colour--accent);
 }
 
@@ -82,6 +84,16 @@ a.button {
   margin-top: 0.5em;
 }
 
+input[type=text],
+input[type=password],
+select {
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 0.5em;
+  color: var(--colour--accent);
+  font-family: var(--ff--primary);
+}
+
 .error {
   color: red;
 }
@@ -121,4 +133,13 @@ a.button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.form-submit__buttons {
+  display: flex;
+  align-items: flex-start;
+}
+
+.form-submit__buttons > * {
+  margin-right: 0.5em;
 }
