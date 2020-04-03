@@ -20,6 +20,7 @@
 
 body {
   font-family: 'Ubuntu', sans-serif;
+  color: #aa3300;
 }
 
 h1,
@@ -65,4 +66,20 @@ a.button {
 .display-panel {
   display: flex;
   flex-wrap: wrap;
+}
+
+@media (min-width: 900px) {
+  .wide-screen-width-55 {
+    width: 55%;
+  }
+
+  .wide-screen-width-45 {
+    width: 45%;
+  }
+}
+
+.vertical-align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

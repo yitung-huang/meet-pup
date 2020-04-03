@@ -1,13 +1,18 @@
 class PagesController < ApplicationController
-  # TODO: Check if user has signed in to render landing page
+
   # render signup/login page if user is signed in
   def index
     @user = User.new
   end
 
-  # TODO: Check if signed in user has dog profiles set up
-  # render user profile if user do not have dog profiles set up
+  def signup
+    @user = User.new
+    session[:error] = nil
+  end
+
   def profile
+    @user = User.find(session[:user_id])
+    redirect_to user_path(@user)
   end
 
   # render dashboard if user have dog profiles set up

@@ -31,7 +31,7 @@
     <p class="sign-up-form__caption">Make sure it's at least 8 characters including a number and a lowercase letter.</p>
   </div>
 
-  <% if params[:controller].eql?("pages") && params[:action].eql?("index") %>
+  <% if params[:controller].eql?("pages") && params[:action].eql?("signup") || (params[:controller].eql?("users") && params[:action].eql?("create")) %>
     <div class="sign-up-form__entry">
       <%= form.submit "Sign up for Meet Pup", :class => "button sign-up-form__button" %>
       <p class="sign-up-form__caption">By clicking "Sign up for Meet Pup", you agree to our <a class="link-inline" href="#">Terms of Service</a> and <a class="link-inline" href="#">Privacy Statement</a>.</p>

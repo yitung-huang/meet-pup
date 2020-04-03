@@ -17,7 +17,7 @@ body {
   width: 75%;
   max-width: 800px;
   margin: 6em auto;
-  background: rgba(256, 256, 256, 0.6);
+  background: #ffefdd;
 }
 
 @media (min-width: 900px){
@@ -27,9 +27,7 @@ body {
 }
 
 .landing-intro {
-  margin-top: 3em;
-  padding: 1em 2em;
-  padding-bottom: 3em;
+  padding: 1em 2em 2em;
 }
 
 .landing-intro__heading {
@@ -37,6 +35,11 @@ body {
   margin-bottom: 0.5em;
 }
 
+.landing-intro__text--alternative {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: 1px solid $--colour--accent;
+}
 
 /* Dashboard */
 .dashboard {

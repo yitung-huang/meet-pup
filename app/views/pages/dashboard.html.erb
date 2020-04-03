@@ -3,7 +3,9 @@
     <h2 class="dashboard-section__title page-title">Dogs near me</h2>
     <div class="display-panel">
       <% @dogs.each do | dog | %>
-        <%= render 'dogs/tile', dog: dog %>
+        <% if dog.user_id != session[:user_id] %>
+          <%= render 'dogs/tile', dog: dog %>
+        <% end %>
       <% end %>
     </div>
   </div>

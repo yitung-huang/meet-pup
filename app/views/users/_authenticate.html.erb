@@ -1,0 +1,22 @@
+<%= form_for(:session, url: login_path, :html => {class: "sign-up-form"}, local: true) do |form| %>
+
+
+  <div class="sign-up-form__entry">
+    <%= form.label :username, :class => "sign-up-form__title" %>
+    <%= form.text_field :username, :class => "sign-up-form__input" %>
+  </div>
+
+  <div class="sign-up-form__entry">
+    <%= form.label :password, :class => "sign-up-form__title" %>
+    <%= form.password_field :password, :class => "sign-up-form__input" %>
+  </div>
+
+  <% if session[:error] %>
+    <p class="sign-up-form__caption error"><%= session[:error] %></p>
+  <% end %>
+
+  <div class="sign-up-form__entry center">
+    <%= form.submit "Log in", class: "button button-add" %>
+  </div>
+
+<% end %>
