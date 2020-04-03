@@ -1,24 +1,49 @@
-# README
+**Note: Meet Pup is still a work in progress. Keep an eye on this page for updates!**
+# Meet Pup
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Meet Pup is a web application that provides a social network for dog owners. After signing up and setting up their own user and dog profiles, users  view profiles of other dogs who live near by, and message other Meet Pup members to arrange a play date for their dogs!
 
-Things you may want to cover:
+## Current features
 
-* Ruby version
+* User sign up
+* User log in
+* User profile editing:
+    * Username
+    * Email
+    * Password
+    * Add/Edit dog profiles
+* Dashboard (view other dogs in the database)
 
-* System dependencies
+## To-do list
 
-* Configuration
+*  Restrict actions based on logged in users
+*  Add image upload for dog profiles
+*  Remove dog profile
+*  Styling for adding/editing dog profiles
+*  Messaging
+*  Add location for user profiles
 
-* Database creation
+## Running the Meet Pup server
+### Setup
+To run Meet Pup on your machine, please clone this repository and move into the `meet-pup` folder.
 
-* Database initialization
+Run
+```
+bundle install
+```
+to install the Ruby Gems inside the `Gemfile`.
 
-* How to run the test suite
+Next, run
+```
+rails db:migrate
+```
+to create the database required for Meet Pup.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Run the server
+Congratulations! You're now ready to go!
 
-* Deployment instructions
-
-* ...
+Simply run
+```
+rails server
+```
+inside the `meet-pup` folder to start your Meet Pup server.
